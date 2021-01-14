@@ -1,1 +1,28 @@
-<p>coordonnee works!</p>
+<div *ngFor="let c of country" class="center">
+
+  <h4>
+    {{c.name}} : {{c.nativeName}}
+  </h4>
+
+  <img
+      class="rounded-circle"
+      src="{{c.flag}}"
+      alt="{{c.name}}"
+      width="400px"
+      height="400px"/>
+
+  <h4>Informations</h4>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Native Name : </strong>{{c.nativeName}}<br>
+      <strong>Name : </strong>{{c.name}}<br>
+      <strong>Capital : </strong>{{c.capital}}<br>
+      <strong>Continent : </strong>{{c.region}}<br>
+      <strong>Population : </strong>{{c.population}}<br>
+      <strong>Area : </strong>{{c.area}}<br>
+      <strong>Languages : </strong>{{c.languages[0].name}}, {{c.languages[0].nativeName}}<br>
+    </li>
+  </ul>
+
+</div>

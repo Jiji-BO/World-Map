@@ -10,6 +10,7 @@ import { PaysComponent } from './pays/pays.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListeComponent } from './liste/liste.component';
 import { CoordonneeComponent } from './coordonnee/coordonnee.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CoordonneeComponent } from './coordonnee/coordonnee.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

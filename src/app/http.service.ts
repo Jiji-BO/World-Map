@@ -28,4 +28,35 @@ export class HttpService {
     return p;
   }
 
+  getCoordonnee(Name)
+  {
+    let p=[]
+    this.http.get<any[]>('https://restcountries.eu/rest/v2/name/'+Name).subscribe
+    (
+      (Countries)=>
+      {
+        Countries.forEach(
+          countrie =>{p.push(countrie)}
+        )
+        console.log(p)
+      }
+    )
+    return p;
+  }
+
+  getAllCountries()
+  {
+    let p=[]
+    this.http.get<any[]>('https://restcountries.eu/rest/v2/all').subscribe
+    (
+      (Countries)=>
+      {
+        Countries.forEach(
+          countrie =>{p.push(countrie)}
+        )
+        console.log(p)
+      }
+    )
+    return p;
+  }
 }

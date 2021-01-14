@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-coordonnee',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoordonneeComponent implements OnInit {
 
-  constructor() { }
+  name;
+  country;
+  constructor(
+  private route: ActivatedRoute,
+  private httpService: HttpService,
+
+  ) { }
 
   ngOnInit(): void {
+      this.route.params.subscribe(event => {
+      this.name=event.countrie;
+     });
+
+    this.country = this.httpService.getCoordonnee(this.name);
+     console.log(this.country);
   }
 
 }
